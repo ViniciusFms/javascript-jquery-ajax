@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h2>- Tabuada -</h2>
+
+    <label for="num">Numero</label><br>
+    <input type="number" id="num">
+
+    <br><br>
+    <button onclick="gerarTabuada()">Gerar tabuada</button>
+
+    <br><br>
+    <div id="resultado">
+        Clique no botão para gerar a tabuada ...
+    </div>
+    
+    <script>
+
+        function gerarTabuada(){
+
+            // Vinculando os elementos HTML
+            const inputNumero = document.getElementById('num');
+            const divResultado = document.getElementById('resultado');
+
+            // Convertendo o valor do input
+            const numero = parseInt(inputNumero.value);
+
+            // Limpando o conteúdo da DIV
+            divResultado.innerHTML = '';
+
+            // Gerando a tabuada
+            for(let cont=0; cont<=10; cont++){
+                let resultado = numero * cont;
+                divResultado.innerHTML += `
+                    <p>
+                        ${numero} x ${cont} = ${resultado}
+                    </p>
+                `;
+            }
+
+        }
+
+    </script>
+</body>
+</html>

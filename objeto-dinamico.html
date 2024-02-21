@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h2>Manipulando Objeto</h2>
+
+    <label for="prop">Propriedade</label><br>
+    <input type="text" id="prop">
+    <br><br>
+    <label for="valor">Valor</label><br>
+    <input type="text" id="valor">
+    <br><br>
+    <button onclick="adicionarPropriedade()">Adicionar</button>
+    
+    <script>
+
+        var objetoGenerico = {};
+
+        function adicionarPropriedade(){
+            // Capturando os valores dos Inputs
+            const prop = document.getElementById('prop').value;
+            const valor = document.getElementById('valor').value;
+
+            // Atribuindo a nova Propriedade com o respectivo Valor
+            objetoGenerico[prop] = valor;
+
+            // Exibir o objeto
+            console.log(objetoGenerico);
+        }
+
+    </script>
+</body>
+</html>

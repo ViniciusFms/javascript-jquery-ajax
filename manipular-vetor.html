@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h2>Manipulando Array</h2>
+
+    <label for="valor">Insira um valor</label><br>
+    <input type="text" id="valor">
+    <br><br>
+    <button onclick="inserirInicio()">Inserir Início</button>
+    <button onclick="inserirFinal()">Inserir Final</button>
+    <button onclick="removerInicio()">Remover Início</button>
+    <button onclick="removerFinal()">Remover Final</button>
+
+    <br><br>
+    <p id="parLista"></p>
+    
+    <script>
+
+        const listaAlunos = [];
+
+        function inserirInicio(){
+            const aluno = document.getElementById('valor').value;
+            listaAlunos.unshift(aluno);
+            imprimirLista();
+        }
+
+        function inserirFinal(){
+            const aluno = document.getElementById('valor').value;
+            listaAlunos.push(aluno);
+            imprimirLista();
+        }
+
+        function removerInicio(){
+            listaAlunos.shift();
+            imprimirLista();
+        }
+
+        function removerFinal(){
+            listaAlunos.pop();
+            imprimirLista();
+        }
+
+        function imprimirLista(){
+            const parLista = document.getElementById('parLista');
+
+            console.log(listaAlunos.toString());
+            parLista.innerHTML = listaAlunos.toString();
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h2>Validando o mês</h2>
+
+    <label for="mes">Mês</label><br>
+    <input type="number" id="mes">
+
+    <br><br>
+    <button onclick="validarMes()">Validar mês</button>
+    
+    <br><br>
+    <p id="resultado">
+        Resultado:
+    </p>
+
+    <script>
+
+        function validarMes(){
+
+            // Interação JS x HTML: Javascript buscando valores do HTML
+            const inputMes = document.getElementById('mes');
+            const parResultado = document.getElementById('resultado');
+
+            switch(inputMes.value){
+                case '2':
+                    console.log('Mês escolhido: Fevereiro');
+                    // Interação JS x HTML: Javascript enviando valor para o HTML
+                    parResultado.innerHTML = 'Mês escolhido: Fevereiro';
+                break;
+                case '7':
+                    console.log('Mês escolhido: Julho');
+                    parResultado.innerHTML = 'Mês escolhido: Julho';
+                break;
+                case '11':
+                    console.log('Mês escolhido: Novembro');
+                    parResultado.innerHTML = 'Mês escolhido: Novembro';
+                    alert('Mês escolhido: Novembro');
+                break;
+                default:
+                    console.log('Mês inválido');
+                    parResultado.innerHTML = `Mês inválido para o código ${inputMes.value}...`;
+                break;
+            }
+        }
+
+    </script>
+</body>
+</html>

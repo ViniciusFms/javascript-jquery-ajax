@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h2>Exemplo com função Callback</h2>
+
+    <label for="numA">Primeiro número</label><br>
+    <input type="number" id="numA"><br><br>
+
+    <label for="numB">Segundo número</label><br>
+    <input type="number" id="numB"><br><br>
+
+    <button onclick="executarOperacao(somar)">+</button>
+    <button onclick="executarOperacao(subtrair)">-</button>
+    <button onclick="executarOperacao(multiplicar)">*</button>
+    <button onclick="executarOperacao(dividir)">/</button>
+
+    <script>
+
+        function somar(a, b){
+            const result = a + b;
+            return result;
+        }
+
+        function subtrair(a, b){
+            const result = a - b;
+            return result;
+        }
+
+        function multiplicar(a, b){
+            const result = a * b;
+            return result;
+        }
+
+        function dividir(a, b){
+            const result = a / b;
+            return result;
+        }
+
+        // Função Callback recebendo por referência a operação matemática que será 
+        // executada, e passando por parâmetro os valores dos inputs
+        function executarOperacao(operacao){
+            const numA = parseInt(document.getElementById('numA').value);
+            const numB = parseInt(document.getElementById('numB').value);
+
+            const resultadoFinal = operacao(numA, numB);
+
+            console.log(`O resultado da operação é ${result}`);
+        }
+
+    </script>
+    
+</body>
+</html>
